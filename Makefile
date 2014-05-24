@@ -61,7 +61,7 @@ staging: test build rsync-staging clean
 deploy: test build rsync-production clean
 
 pull:
-	@rsync -avz --progress -e "ssh -p $(SSH_PORT_PRODUCTION)" $(SSH_USER_PRODUCTION)@$(SSH_HOST_PRODUCTION):$(DIR_PRODUCTION)public/content/uploads/ ./public/content/uploads/
+	@rsync -avz --progress -e "ssh -p $(SSH_PORT_PRODUCTION)" $(SSH_USER_PRODUCTION)@$(SSH_HOST_PRODUCTION):$(DIR_PRODUCTION)public/wp-content/uploads/ ./public/wp-content/uploads/
 
 watch:
 	@node_modules/.bin/node-sass --watch --source-map $(THEME_PATH)/css/style.css.map $(THEME_PATH)/scss/style.scss $(THEME_PATH)/css/style.css
