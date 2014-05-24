@@ -71,30 +71,30 @@ $table_prefix  = 'wp_';
 define('WPLANG', '');
 
 /**
- * Absolute path to the WordPress directory.
- */
-if (!defined('ABSPATH')) {
-    define('ABSPATH', dirname(__FILE__) . '/');
-}
-
-/**
  * Authentication Unique Keys and Salts.
  *
  * To invalidate all existing cookies and force all users to log in again, you
  * can reset the secrets by deleting the file wp-secret-keys.php
  */
-if (!file_exists(ABSPATH . 'wp-secret-keys.php')) {
+if (!file_exists(dirname(__DIR__) . '/wp-secret-keys.php')) {
 
     $secretKeys = '<?php' . PHP_EOL;
     $secretKeys .= file_get_contents(
         'https://api.wordpress.org/secret-key/1.1/salt/'
     );
 
-    file_put_contents(ABSPATH . 'wp-secret-keys.php', $secretKeys);
+    file_put_contents(dirname(__DIR__) . '/wp-secret-keys.php', $secretKeys);
 
 }
 
-require_once(ABSPATH . 'wp-secret-keys.php');
+require_once(dirname(__DIR__) . '/wp-secret-keys.php');
+
+/**
+ * Absolute path to the WordPress directory.
+ */
+if (!defined('ABSPATH')) {
+    define('ABSPATH', dirname(__FILE__) . '/');
+}
 
 /**
  * Sets up WordPress vars and included files.
