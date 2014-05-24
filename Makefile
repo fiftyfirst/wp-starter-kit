@@ -56,9 +56,9 @@ rsync-production:
 	@echo Deploying to PRODUCTION server...
 	@rsync -avz --progress --delete --exclude ".tmp" --exclude "public/wp-content/uploads" --exclude ".DS_Store" --exclude ".sass-cache" --exclude ".git" --exclude ".gitignore" --exclude="node_modules" -e "ssh -p $(SSH_PORT_PRODUCTION)" ./ $(SSH_USER_PRODUCTION)@$(SSH_HOST_PRODUCTION):$(DIR_PRODUCTION)
 
-staging: test build rsync-staging clean
+staging: build rsync-staging clean
 
-deploy: test build rsync-production clean
+deploy: build rsync-production clean
 
 pull:
 	@rsync -avz --progress -e "ssh -p $(SSH_PORT_PRODUCTION)" $(SSH_USER_PRODUCTION)@$(SSH_HOST_PRODUCTION):$(DIR_PRODUCTION)public/wp-content/uploads/ ./public/wp-content/uploads/
