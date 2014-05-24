@@ -1,0 +1,8 @@
+{
+  "name": "wp-starer-kit",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "modernizr#2",
+    "jquery": "jquery#1"
+  }
+}

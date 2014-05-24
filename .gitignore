@@ -1,0 +1,12 @@
+.DS_Store
+.sass-cache
+*.css.map
+wp-secret-keys.php
+node_modules
+public/*
+!public/wp-content
+public/wp-content/*
+!public/wp-content/themes
+public/wp-content/themes/*
+!public/wp-content/themes/wp-starter-kit
+public/wp-content/themes/wp-starter-kit/bower_components/*

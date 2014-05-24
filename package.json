@@ -1,0 +1,9 @@
+{
+  "name": "wp-starter-kit",
+  "version": "0.0.0",
+  "devDependencies": {
+    "node-sass": "*",
+    "clean-css": "*",
+    "uglify-js": "*"
+  }
+}
