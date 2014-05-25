@@ -1,6 +1,7 @@
 .DS_Store
 .sass-cache
 *.css.map
+wp-config.php
 wp-secret-keys.php
 node_modules
 public/*

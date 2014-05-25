@@ -52,5 +52,6 @@ init:
 	@unzip .tmp/wordpress.zip -d .tmp
 	@cp -R .tmp/wordpress/* public
 	@rm -r .tmp
+	@cp wp-config-sample.php wp-config.php
 	@npm install
 	@bower install
