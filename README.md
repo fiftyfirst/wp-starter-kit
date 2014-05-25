@@ -31,4 +31,4 @@ Install additional dependencies using Bower.
 	bower install --save slideshow
 
 ## Todo
-* Make the `watch` task recursive.
+* Make the `make watch` task recursive.
