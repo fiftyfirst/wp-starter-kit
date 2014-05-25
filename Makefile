@@ -11,15 +11,6 @@ SSH_PORT_PRODUCTION = 22
 
 .PHONY: init build clean rsync-staging rsync-production staging deploy pull watch
 
-init:
-	@mkdir .tmp
-	@curl http://wordpress.org/latest.zip > .tmp/wordpress.zip
-	@unzip .tmp/wordpress.zip -d .tmp
-	@cp -R .tmp/wordpress/* public
-	@rm -r .tmp
-	@npm install
-	@bower install
-
 build:
 	@mkdir .tmp
 	@cp $(THEME_PATH)/header.php .tmp/header.php
@@ -54,3 +45,12 @@ pull:
 
 watch:
 	@node_modules/.bin/node-sass --watch --source-map $(THEME_PATH)/css/style.css.map $(THEME_PATH)/scss/style.scss $(THEME_PATH)/css/style.css
+
+init:
+	@mkdir .tmp
+	@curl http://wordpress.org/latest.zip > .tmp/wordpress.zip
+	@unzip .tmp/wordpress.zip -d .tmp
+	@cp -R .tmp/wordpress/* public
+	@rm -r .tmp
+	@npm install
+	@bower install
