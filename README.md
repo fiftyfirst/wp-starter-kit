@@ -14,7 +14,7 @@ To get started, clone this repository and run `make init`:
     cd wp-starter-kit
     make init
 
-Compile SASS files by running:
+Compile SCSS files by running:
 
 	make watch
 
@@ -29,3 +29,6 @@ Clean up minified files by running:
 Install additional dependencies using Bower.
 
 	bower install --save slideshow
+
+## Todo
+* Make the `watch` task recursive.
