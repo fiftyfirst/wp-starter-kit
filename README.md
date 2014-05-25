@@ -29,6 +29,3 @@ Clean up minified files by running:
 Install additional dependencies using Bower.
 
 	bower install --save slideshow
-
-## Todo
-* Make the `make watch` task recursive.
