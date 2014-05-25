@@ -15,19 +15,8 @@ init:
 	@mkdir .tmp
 	@curl http://wordpress.org/latest.zip > .tmp/wordpress.zip
 	@unzip .tmp/wordpress.zip -d .tmp
-	@mv .tmp/wordpress public
+	@cp -R .tmp/wordpress/* public
 	@rm -r .tmp
-	@mkdir -p $(THEME_PATH)/scss
-	@mkdir $(THEME_PATH)/css
-	@mkdir $(THEME_PATH)/js
-	@echo "<?php\necho 'Welcome to the WP Starter Kit';" >> $(THEME_PATH)/index.php
-	@echo "/*\nTheme Name: WP Starter Kit\nAuthor: WP Starter Kit <mail@example.org>\nAuthor URI: http://example.org\n*/" >> $(THEME_PATH)/style.css
-	@touch $(THEME_PATH)/header.php
-	@touch $(THEME_PATH)/footer.php
-	@touch $(THEME_PATH)/scss/style.scss
-	@touch $(THEME_PATH)/css/style.css
-	@touch $(THEME_PATH)/scss/editor-style.scss
-	@touch $(THEME_PATH)/css/editor-style.css
 	@npm install
 	@bower install
 

@@ -1,0 +1,96 @@
+/*!
+ * WP Starter Kit
+ *
+ * @author    51st <cr@fiftyfir.st>
+ * @link      http://fiftyfir.st
+ */
+
+// Mixins
+@function em($target, $context: 16) {
+    @return $target/$context+0em;
+}
+@mixin box-sizing($boxSizing: border-box) {
+    -webkit-box-sizing: $boxSizing;
+    -moz-box-sizing: $boxSizing;
+    box-sizing: $boxSizing;
+}
+@mixin border-radius($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin box-shadow($shadow: 0 0 3px 0 rgba(0,0,0,.1)) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+@mixin background-size($size: 50% 50%) {
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    background-size: $size;
+}
+@mixin opacity($opacity: 100) {
+    opacity: $opacity / 100;
+    filter: alpha(opacity=$opacity);
+}
+@mixin hyphens($hyphens: auto) {
+    -webkit-hyphens: $hyphens;
+    -moz-hyphens: $hyphens;
+    hyphens: $hyphens;
+}
+@mixin linear-gradient($from, $to) {
+    background: -webkit-linear-gradient($from, $to);
+    background: -moz-linear-gradient($from, $to);
+    background: -ms-linear-gradient($from, $to);
+    background: -o-linear-gradient($from, $to);
+    background: linear-gradient($from, $to);
+}
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+@mixin inline-spacing($spacing) {
+    letter-spacing: $spacing;
+    &:-o-prefocus, & {
+        word-spacing: $spacing;
+    }
+}
+@mixin respond-to($media) {
+    @if $media == medium {
+        @media only screen and (min-width: 48em) {
+            @content;
+        }
+    }
+    @if $media == large {
+        @media only screen and (min-width: 66em) {
+            @content;
+        }
+    }
+}
+
+// Variables
+$white: #fff;
+$black: #000;
+
+// Imports
+@import 'normalize';
+
+// Base styles
+*,
+*:before,
+*:after {
+    @include box-sizing(border-box);
+}
+img {
+    display: block;
+}
