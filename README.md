@@ -3,6 +3,7 @@ The WordPress Starter Kit by 51ˢᵗ helps quickly set up a development environm
 
 ## What is provided
 * Build and deployment tasks using a Makefile
+* A basic theme
 * Normalize.css, Modernizr, and jQuery 1.x via Bower.
 * usemin.py automatically scans `header.php` and `footer.php` and minifies and concatenates CSS and JavaScript files to single files upon deployment.
 
