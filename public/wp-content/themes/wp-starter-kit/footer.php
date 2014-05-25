@@ -21,7 +21,7 @@
         </footer>
 
         <!-- build:js <?php bloginfo('template_url'); ?>/js/main.js -->
-        <script src="<?php bloginfo('template_url'); ?>/components/jquery/jquery.js"></script>
+        <script src="<?php bloginfo('template_url'); ?>/bower_components/jquery/jquery.js"></script>
         <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
         <!-- endbuild -->
 

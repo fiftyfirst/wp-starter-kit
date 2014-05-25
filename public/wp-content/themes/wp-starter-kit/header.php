@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
         <!-- endbuild -->
         <!-- build:js <?php bloginfo('template_url'); ?>/js/modernizr.js -->
-        <script src="<?php bloginfo('template_url'); ?>/components/modernizr/modernizr.js"></script>
+        <script src="<?php bloginfo('template_url'); ?>/bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
         <meta name="robots" content="index,follow">
         <?php wp_head(); ?>
