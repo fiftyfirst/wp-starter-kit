@@ -20,13 +20,13 @@ build:
 
 clean:
 	@echo Restoring script and link refs...
-	@mv .tmp/footer.php $(THEME_PATH)/footer.php
-	@mv .tmp/header.php $(THEME_PATH)/header.php
+	@-mv .tmp/footer.php $(THEME_PATH)/footer.php
+	@-mv .tmp/header.php $(THEME_PATH)/header.php
 	@echo Cleaning up files...
-	@rm -r .tmp
-	@rm $(THEME_PATH)/css/style-$(REF).css
-	@rm $(THEME_PATH)/js/modernizr-$(REF).js
-	@rm $(THEME_PATH)/js/main-$(REF).js
+	@-rm -r .tmp
+	@-rm $(THEME_PATH)/css/style-$(REF).css
+	@-rm $(THEME_PATH)/js/modernizr-$(REF).js
+	@-rm $(THEME_PATH)/js/main-$(REF).js
 
 rsync-staging:
 	@echo Deploying to STAGING server...
