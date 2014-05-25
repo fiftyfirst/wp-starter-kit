@@ -3,20 +3,6 @@ import subprocess
 import sys
 import re
 
-for i in ['cleancss', 'uglifyjs']:
-    try:
-        subprocess.check_output('which ' + i, shell=True)
-    except:
-        print 'Error: Binary "' + i + '" was not found in $PATH'
-        sys.exit()
-
-if len(sys.argv) < 5:
-    print 'Usage:'
-    print (
-        'python usemin.py [SOURCE FILE] [OUTPUT FILE] [WORK DIRECTORY] ' +
-        '[VERSION]'
-    )
-    sys.exit()
 
 node_bin = os.getcwd() + '/node_modules/.bin/'
 input_file = sys.argv[1]
@@ -29,6 +15,21 @@ all_assets = []
 record = None
 line = 0
 output = ''
+
+for i in ['cleancss', 'uglifyjs']:
+    try:
+        subprocess.check_output('which ' + node_bin + i, shell=True)
+    except:
+        print 'Error: Binary "' + i + '" was not found in ' + node_bin
+        sys.exit()
+
+if len(sys.argv) < 5:
+    print 'Usage:'
+    print (
+        'python usemin.py [SOURCE FILE] [OUTPUT FILE] [WORK DIRECTORY] ' +
+        '[VERSION]'
+    )
+    sys.exit()
 
 with open(input_file) as f:
     print (
